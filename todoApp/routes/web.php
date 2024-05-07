@@ -20,3 +20,10 @@ Route::get('c1', [HomeController::class,'index']);
 //leitet um auf einen Controller
 Route::get('wert1', [HomeController::class,'wert1']);
 
+Route::get('/home', function () {
+    return view('platzhalter-inhalt');
+});
+
+Route::get('/home2', function () {
+    return view('section-demo');
+});
