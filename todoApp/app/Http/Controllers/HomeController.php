@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -38,8 +39,13 @@ class HomeController extends Controller
         $nachname = $request->input('nachname');
 
         dd($vorname, $nachname);
-
         //schreibe die daten in die datenbank
         
+    }
+
+    public function flights(){
+        $flights = DB::select('select * from Flights');
+
+        return view('flights', ['flights'=>$flights]);
     }
 }

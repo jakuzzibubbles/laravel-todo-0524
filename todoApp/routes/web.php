@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\FlightController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -27,3 +28,8 @@ Route::get('/home', function () {
 Route::get('/home2', function () {
     return view('section-demo');
 });
+
+//Route::get('/flights', [HomeController::class,'flights']);
+
+Route::get('/flights', [FlightController::class,'index']);
+
